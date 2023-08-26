@@ -44,3 +44,26 @@ document.querySelectorAll('.featured-image-3').forEach(image_3 => {
         document.querySelector('.big-image-3').src = src;
     });
 });
+
+var button=document.getElementById('button');
+var img = document.getElementById('image');
+function button(){
+    img.style.transform = "scale(1)";
+};
+
+// $('img[data-enlargable]').addClass('img-enlargable').click(function(){
+//     var src = $(this).attr('src');
+//     $('<img>').css({
+//         background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
+//         backgroundsize: 'contain',
+//         width: '100%',
+//         height: '100%',
+//         position: 'fixed',
+//         zIndex: '10000',
+//         top: '0',
+//         left: '0',
+//         cursor: 'zoom-out'
+//     }).click(function(){
+//         $(this).remove();
+//     }).appendTo('body');
+// });

@@ -77,12 +77,15 @@ span{
 }
 
 header{
+    /* margin-left: 5%; */
     position: fixed;
+    width: 100%;
     z-index: 200;
     background: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* border-radius: 80px; */
     top: 0;
     left: 0;
     right: 0;
@@ -97,12 +100,23 @@ header .logo{
 }
 
 header .navbar a{
+    display: inline-block;
     font-size: 1.7rem;
     padding: 10px;
     margin: 10px;
 }
-header .navbar a:hover{
-    color:#ff9f1a;
+header .navbar a::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--orange);
+    display:block;
+    margin: auto;
+    transition: 1s;
+}
+header .navbar a:hover::after{
+    width: 90%;
+    font-weight: bold;
 }
 header .icons a{
     color: #2c2c54;
@@ -174,20 +188,26 @@ header .icons a:hover{
     }
 }
 .home .slide-cont .slide .image .text{
+    color:#2c2c54;
+    font-style:oblique;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 90px;
+    margin-top: 25px;
     position: absolute;
-    top: -300px;
-    left: -300px;
+    top: 0px;
+    left: 200px;
     z-index: -1;
-    width: 1300px;
-    transform: rotate(-35deg);
     animation: text 1s linear 1s backwards;
 }
 @keyframes text{
     0%{
+        color: #2c2c54;
         opacity: 0;
-        top: -10rem;
-        /* transform: rotate(0deg) scale(.5); */
+        transform: translateX(-100px);
+
+        /* transform: rotate(360deg) scale(.5); */
     }
+
 }
 .home .slide-cont .slide .image #text2{
     margin-top: 80px;
@@ -292,7 +312,7 @@ header .icons a:hover{
     padding-top: 1rem;
 }
 .service .box-container .box p{
-    font-size: 1.5rem;
+    font-size: 17px;
     color: #666;
     padding: 1rem 0;
 }
@@ -340,13 +360,13 @@ header .icons a:hover{
     flex-flow: column;
     position: absolute;
     top: .5rem;
-    left: -10rem;
+    left: -14rem;
     transition: 1s;
 }
 .products .box-container .box:hover .icon{
     left: 1rem;
 }
-.products .box-container .box .icon a{
+.products .box-container .box .icon button{
     border: 1px solid var(--black);
     width: 100px;
     height: 4.5rem;
@@ -359,7 +379,7 @@ header .icons a:hover{
     margin-top: 5px;
     z-index: 5;
 }
-.products .box-container .box .icon a:hover{
+.products .box-container .box .icon button:hover{
     background: var(--orange);
     color: #fff;
 }
@@ -389,6 +409,65 @@ header .icons a:hover{
 }
 .products .box-container .box .content .btn{
     margin-bottom: 1.5rem;
+}
+
+
+.head .text{
+    top: 0;
+    justify-content: space-around;
+    height: 70vh;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.1);
+    background: linear-gradient(#eee, #2c2c54);
+}
+.head .text h1 .not{
+    animation: not 2s linear;
+}
+.head .text h1 .your{
+    animation: your 2s linear;
+}
+.head .text h1 .every{
+    animation: every 2s linear;
+}
+.head .text h1 .shoes{
+    animation: shoes 2s linear;
+}
+/* keyframes */
+@keyframes not{
+    0%{
+        opacity: 0;
+        transform: translateY(-20rem);
+    }
+
+}
+@keyframes your{
+    0%{
+        opacity: 0;
+        transform: translateX(-20rem);
+    }
+}
+@keyframes every{
+    0%{
+        opacity: 0;
+        transform: translateX(20rem);
+    }
+}
+@keyframes shoes{
+    0%{
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+}
+/* keyframes */
+.head h1{
+    font-family:'Courier New', Courier, monospace;
+    font-style: italic;
+    color: #ff9f1a;
+    text-shadow: 10px 10px 50px 1px #2c2c54;
+    font-size: 80px;
+    margin-top: 100px;
+    padding: 20px;
+    text-align: center;
 }
 /* prducts section ends */
 
@@ -490,6 +569,7 @@ header .icons a:hover{
 
 }
 .about .box-container h3{
+    padding: 10px;
     margin-top: 10px;
     color: #2c2c54;
     font-size: 25px;
@@ -501,8 +581,17 @@ header .icons a:hover{
     color: #ff9f1a;
     scale: 1.1;
 }
+.about .box-container .about-left{
+    justify-content: space-evenly;
+}
+.about .box-container .about-left p{
+    font-size: 17px;
+    padding: 2rem;
+    text-align: center;
+}
 .about .box-container .about-left,
 .about .box-container .about-right{
+    text-align: center;
     border: 1px solid rgba(0,0,0,.1);
     border-radius: 5px;
     background: #f9f9f9;
@@ -552,6 +641,7 @@ header .icons a:hover{
     width: 100%;
 }
 .about .about-down h3{
+    padding: 10px;
     color: #2c2c54;
     margin-top: 10px;
     font-size: 25px;
@@ -584,6 +674,20 @@ header .icons a:hover{
 }
 
 @media (max-width:600px){
+    .header{
+        width: 100%;
+    }
+    .about .about-down .why{
+        width: 100%;
+        display: block;
+    }
+    .products .box-container .box{
+        padding: 20px; 
+        margin: 20px;       
+    }
+    .head h1{
+        font-size: 20px;
+    }
     .btnn{
         margin-left: 0;
     }
@@ -660,6 +764,7 @@ header .icons a:hover{
 }
 @media (max-width:600px){
     html{
+        overflow-x: hidden;
         font-size: 50%;
     }
     .review .box-container{
@@ -714,12 +819,6 @@ header .icons a:hover{
     color: #fff;
     font-size: 40px;
 }
-
-.footer .box-container h3{
-    font-size: 25px;
-    color: #fff;
-    margin-top: 100px;
-}
 .footer .social-links{
     display: flex;
     flex-direction: column;
@@ -736,16 +835,40 @@ header .icons a:hover{
     transform: rotateY(360deg);
     color: #2c2c54;
 }
+.footer .bottom p{
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+    padding: 15px;
+    margin-left: 37%;
 
+}
+.footer .bottom a{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    justify-content:center;
+    margin-left: 30%;
+    font-size: 25px;
+    color: #fff;
+}
+.footer .bottom{
+    display: flex;
+    width:100%;
+}
 @media (max-width:600px){
     .footer .box-container{
         height:min-content;
+        flex-direction: row;
+        display: flex;
         gap: 10px;
+        flex: 1 1 10rem;
+
     }
     .footer .box-container .box{
         font-size: 50%;        
         width: 100%;
-        /* flex: 1 1 10rem; */
     }
     .footer .box-container .box a,
     .footer .box-container .social-links i,
@@ -755,9 +878,6 @@ header .icons a:hover{
     .footer .social-links{
         display: flex;
         flex-direction: row;
-    }
-    .footer .box-container h3{
-        display: none;
     }
     .footer .social-links a:hover i{
         color: line;
