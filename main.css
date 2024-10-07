@@ -80,7 +80,7 @@ header{
     /* margin-left: 5%; */
     position: fixed;
     width: 100%;
-    z-index: 200;
+    z-index: 10;
     background: #fff;
     display: flex;
     justify-content: space-between;
@@ -674,9 +674,6 @@ header .icons a:hover{
 }
 
 @media (max-width:600px){
-    .header{
-        width: 100%;
-    }
     .about .about-down .why{
         width: 100%;
         display: block;
@@ -858,6 +855,18 @@ header .icons a:hover{
     width:100%;
 }
 @media (max-width:600px){
+    #home .image h1{
+        font-size: 30px;
+    }
+    .header{
+        margin: 0 15px;
+        width: 100%;
+        display: flex;
+    }
+    .header .logo{
+        margin-right: 400px;
+        color: red;
+    }
     .footer .box-container{
         height:min-content;
         flex-direction: row;
